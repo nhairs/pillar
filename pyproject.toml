@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pillar"
+version = "0.1.0"
+description = "Building Blocks for Python Applications"
+authors  = [
+    {name = "Nicholas Hairs", email = "info+pillar@nicholashairs.com"},
+]
+
+# Dependency Information
+requires-python = ">=3.7"
+dependencies = [
+    "colorlog",
+    "dataclassy",
+    "deepmerge",
+    "pyaml",
+]
+
+# Extra information
+readme = "README.md"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Typing :: Typed",
+]
+
+[project.urls]
+homepage = "https://nhairs.github.io/pillar/latest/"
+github = "https://github.com/nhairs/pillar"
+
+[project.optional-dependencies]
+recommended = [
+    "orjson",
+]
+
+dev = [
+    ## Type Stubs
+    "types-PyYAML",
+    "orjson",  # is optional dependency, install during dev for typechecking
+    ### dev.sh dependencies
+    ## Formatting / Linting
+    "validate-pyproject[all]",
+    "black",
+    "pylint",
+    "mypy",
+    ## Testing
+    "pytest",
+    ## REPL
+    "bpython",
+]
+
+docs = [
+    "black",
+    "mkdocs",
+    "mkdocs-material>=8.5",
+    "mkdocs-awesome-pages-plugin",
+    "mdx_truly_sane_lists",
+    "mkdocstrings[python]",
+    "mkdocs-gen-files",
+    "mkdocs-literate-nav",
+    "mike",
+]
+
+[tool.setuptools.package-data]
+python_template = ["py.typed"]
