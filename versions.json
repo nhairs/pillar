@@ -1,0 +1,15 @@
+[
+  {
+    "version": "0.1.0",
+    "title": "0.1.0",
+    "aliases": [
+      "latest"
+    ],
+    "properties": {
+      "git_branch": "main",
+      "git_commit": "c85048a742d968cc2d15249d67e249680fd0c2e9",
+      "git_commit_short": "c85048a",
+      "build_timestamp": "1704032424"
+    }
+  }
+]
