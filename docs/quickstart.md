@@ -190,3 +190,6 @@ Pillar will also create a basic log file early during the setup process to captu
 % tail /var/tmp/pillar_sample_app.init.log
 <should be empty>
 ```
+
+### Detailed Documentation
+See [Writing Applications](applications.md).

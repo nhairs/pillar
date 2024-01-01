@@ -55,7 +55,7 @@ class LoggingManifest:
         file_filename: filename of log. Will be formatted with the applications
             name.
         file_format: text format for file logging
-        file_format_stle: file_format format style
+        file_format_style: file_format format style
         file_date_format: file_format date format
         file_max_size: max size of a log file in bytes (see `RotatingFileHandler`).
         file_backup_count: number of old log files to keep (see `RotatingFileHandler`).
