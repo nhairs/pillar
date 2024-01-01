@@ -187,7 +187,7 @@ class Application(LoggingMixin):
         been correctly setup.
 
         Args:
-            supress_warning: Suppress the `RuntimeWarning` if this method is called multiple times.
+            suppress_warning: Suppress the `RuntimeWarning` if this method is called multiple times.
         """
         if self._setup_called:
             if not suppress_warning:
@@ -350,6 +350,8 @@ class Application(LoggingMixin):
     def _get_application_name(self) -> str:
         if self.__class__.application_name is not None:
             return self.__class__.application_name
+
+        # Note: in the future and for py310+ we could use sys.orig_argv
 
         if self.__class__.__module__ == "__main__":
             if __main__.__spec__ is None:
