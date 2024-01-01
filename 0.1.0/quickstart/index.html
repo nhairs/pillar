@@ -355,6 +355,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sample Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-our-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing our application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-our-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running our application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-help-usage-and-version-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing help / usage and version information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increasing-logging-verbosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Increasing logging verbosity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing the log files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -696,6 +756,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Sample Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-our-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing our application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-our-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running our application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-help-usage-and-version-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing help / usage and version information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increasing-logging-verbosity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Increasing logging verbosity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing the log files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -730,6 +850,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip3<span class="w"> </span>install<span class="w"> </span>pillar
 </code></pre></div>
 <h2 id="sample-application">Sample Application<a class="headerlink" href="#sample-application" title="Permanent link">🔗</a></h2>
+<h3 id="writing-our-application">Writing our application<a class="headerlink" href="#writing-our-application" title="Permanent link">🔗</a></h3>
 <div class="highlight"><span class="filename">pillar_sample_app.py</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">pillar.application</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">class</span> <span class="nc">MyApplication</span><span class="p">(</span><span class="n">pillar</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">Application</span><span class="p">):</span>
@@ -793,6 +914,86 @@
 <a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 <a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">MyApplication</span><span class="p">()</span>
 <a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="running-our-application">Running our application<a class="headerlink" href="#running-our-application" title="Permanent link">🔗</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">[23:54:32][ERROR]: Is anyone there? TT_TT</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>Nick
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">[23:56:44][INFO]: Hello Nick. It&#39;s quite lonely in here isn&#39;t it?</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>Nick<span class="w"> </span>Fred
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">[23:57:10][INFO]: Hello Nick and Fred.</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>Nick<span class="w"> </span>Fred<span class="w"> </span>James
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="go">[23:57:37][INFO]: Hello Nick, Fred, and James</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>Nick<span class="w"> </span>Fred<span class="w"> </span>James<span class="w"> </span>Alice<span class="w"> </span>Bob<span class="w"> </span>Malory
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="go">[23:58:18][CRITICAL]: Sorry but there are too many of you 0_0</span>
+</code></pre></div>
+<h3 id="viewing-help-usage-and-version-information">Viewing help / usage and version information<a class="headerlink" href="#viewing-help-usage-and-version-information" title="Permanent link">🔗</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>--help
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">usage: pillar_sample_app.py [-h] [-c CONFIG_PATH] [-v] [--log-dir PATH] [--version] [NAME ...]</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">This is a sample application to show off Pillar.</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="go">The class docstring will be used as the description of the program it it is set.</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="go">positional arguments:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="go">  NAME                  Name(s) to say hello to.</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="go">options:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="go">  -h, --help            show this help message and exit</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="go">  -c CONFIG_PATH, --config CONFIG_PATH</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="go">                        Add a config file to parse. Config files are parsed in the order they are</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="go">                        added with values being merged into the previously parsed config.</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="go">  -v, --verbose         Increase logging verbosity</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="go">  --log-dir PATH        Set where log files should be stored. Defaults to /var/tmp</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="go">  --version             show program&#39;s version number and exit</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="go">Copyright (c) The Pillar Authors</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>--version
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="go">1.2.3</span>
+</code></pre></div>
+<h3 id="increasing-logging-verbosity">Increasing logging verbosity<a class="headerlink" href="#increasing-logging-verbosity" title="Permanent link">🔗</a></h3>
+<p>To view the logs we can use the <code>--verbose</code> argument multiple times, or use the shortened form <code>-v</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>-v<span class="w"> </span>Nick<span class="w"> </span>Fred<span class="w"> </span>James<span class="w"> </span>Alice<span class="w"> </span>Bob<span class="w"> </span>Malory
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="go">[23:59:36][DEBUG]: There are 6</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">[23:59:36][CRITICAL]: Sorry but there are too many of you 0_0</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>-vvv<span class="w"> </span>Nick<span class="w"> </span>Fred<span class="w"> </span>James<span class="w"> </span>Alice<span class="w"> </span>Bob<span class="w"> </span>Malory
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="go">[23:59:57][DEBUG]: There are 6</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="go">[23:59:57][VDEBUG]: Our config is {&#39;too_many_names&#39;: 5}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="go">[23:59:57][CRITICAL]: Sorry but there are too many of you 0_0</span>
+</code></pre></div>
+<h3 id="using-a-config-file">Using a config file<a class="headerlink" href="#using-a-config-file" title="Permanent link">🔗</a></h3>
+<p>We know that we have a default config with a <code>too_many_names</code> set to <code>5</code>. Let's write our own config file to increase. By default Pillar supports JSON and YAML config files.</p>
+<div class="highlight"><span class="filename">pillar_sample_config.yaml</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">too_many_names</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</code></pre></div>
+<p>Let's call our program again with the new config file.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">% </span>python<span class="w"> </span>pillar_sample_app.py<span class="w"> </span>-c<span class="w"> </span>pillar_sample_config.yaml<span class="w"> </span>-vv<span class="w"> </span>Nick<span class="w"> </span>Fred<span class="w"> </span>James<span class="w"> </span>Alice<span class="w"> </span>Bob<span class="w"> </span>Malory
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">[00:02:36][DEBUG]: There are 6</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">[00:02:36][VDEBUG]: Our config is {&#39;too_many_names&#39;: 10}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">[00:02:36][INFO]: Hello Nick, Fred, James, Alice, Bob, and Malory</span>
+</code></pre></div>
+<h3 id="viewing-the-log-files">Viewing the log files<a class="headerlink" href="#viewing-the-log-files" title="Permanent link">🔗</a></h3>
+<p>All our output so far has been through the console. However Pillar will also have written logs to <code>/var/tmp</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">% </span>tail<span class="w"> </span>/var/tmp/pillar_sample_app.log
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">[20240101T235737+1100][2407242][pillar_sample_app][INFO]: Hello Nick, Fred, and James</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">[20240101T235818+1100][2407254][pillar_sample_app][CRITICAL]: Sorry but there are too many of you 0_0</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">[20240101T235936+1100][2407292][pillar_sample_app][DEBUG]: There are 6</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">[20240101T235936+1100][2407292][pillar_sample_app][CRITICAL]: Sorry but there are too many of you 0_0</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="go">[20240101T235957+1100][2407299][pillar_sample_app][DEBUG]: There are 6</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="go">[20240101T235957+1100][2407299][pillar_sample_app][VDEBUG]: Our config is {&#39;too_many_names&#39;: 5}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="go">[20240101T235957+1100][2407299][pillar_sample_app][CRITICAL]: Sorry but there are too many of you 0_0</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="go">[20240102T000236+1100][2407433][pillar_sample_app][DEBUG]: There are 6</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="go">[20240102T000236+1100][2407433][pillar_sample_app][VDEBUG]: Our config is {&#39;too_many_names&#39;: 10}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="go">[20240102T000236+1100][2407433][pillar_sample_app][INFO]: Hello Nick, Fred, James, Alice, Bob, and Malory</span>
+</code></pre></div>
+<p>Pillar will also create a basic log file early during the setup process to capture any errors that occur before full logging is available. Let's check it too:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">% </span>tail<span class="w"> </span>/var/tmp/pillar_sample_app.init.log
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">&lt;should be empty&gt;</span>
 </code></pre></div>
 
 
