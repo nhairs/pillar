@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nhairs.github.io/pillar/latest/applications/</loc>
+         <lastmod>2024-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nhairs.github.io/pillar/latest/changelog/</loc>
          <lastmod>2024-01-01</lastmod>
          <changefreq>daily</changefreq>
