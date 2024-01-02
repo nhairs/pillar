@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://nhairs.github.io/pillar/latest/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/applications/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/changelog/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/quickstart/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/application/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/config/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/dataclass/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/exception/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/logging/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nhairs.github.io/pillar/latest/reference/pillar/util/</loc>
-         <lastmod>2024-01-01</lastmod>
+         <lastmod>2024-01-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
