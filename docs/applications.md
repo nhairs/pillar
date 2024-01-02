@@ -27,17 +27,19 @@ A common reason for overriding `setup` rather than doing custom setup at the sta
 # Could be in the same package, or you might have your own
 # organisation base package you import into all projects
 class BaseApplication(Application):
+    name = "my-app"
+
     def setup(self, *args, **kwargs):
         super().setup(*args, **kwargs)
         # Custom setup
         return
 
 class ProcessStuff(BaseApplication):
-    name = "my-app"
+    application_name = "my-app"
     # ...
 
 class ReportStuff(BaseApplication):
-    name = "my-app-report"
+    application_name = "my-app-report"
     # ...
 ```
 
