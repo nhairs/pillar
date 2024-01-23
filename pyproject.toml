@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pillar"
-version = "0.1.0"
+version = "0.2.0"
 description = "Building Blocks for Python Applications"
 authors  = [
     {name = "Nicholas Hairs", email = "info+pillar@nicholashairs.com"},
@@ -74,4 +74,4 @@ docs = [
 ]
 
 [tool.setuptools.package-data]
-python_template = ["py.typed"]
+pillar = ["py.typed"]

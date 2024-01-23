@@ -3,7 +3,7 @@
 ## Standard Library
 import logging
 import sys
-from typing import Dict
+from typing import Dict, Type
 
 import __main__
 
@@ -94,6 +94,35 @@ def logging_file_handler_errors_kwargs(errors: str) -> Dict[str, str]:
     return {}
 
 
+def get_logger_name_for_instance(instance: object, prefix: str = "") -> str:
+    """Get a logger name based on the qualified name of this instance's class.
+
+    Args:
+        instance: object to inspect
+        prefix: optional prefix for the logger name.
+    """
+    return get_logger_name_for_class(instance.__class__, prefix)
+
+
+def get_logger_name_for_class(cls: Type[object], prefix: str = "") -> str:
+    """Get a logger name based on the qualified name of a class.
+
+    Args:
+        cls: object to inspect
+        prefix: optional prefix for the logger name.
+    """
+    if cls.__module__ == "__main__":
+        module_name = __main__.__spec__.name
+    else:
+        module_name = cls.__module__
+    logger_name = f"{module_name}.{cls.__qualname__}"
+
+    if prefix:
+        return f"{prefix}.{logger_name}"
+
+    return logger_name
+
+
 ### CLASSES
 ### ============================================================================
 class LoggingMixinBase:  # pylint: disable=too-few-public-methods
@@ -101,14 +130,14 @@ class LoggingMixinBase:  # pylint: disable=too-few-public-methods
 
     logger: logging.Logger
 
-    def _get_logger(self) -> logging.Logger:
-        """Get a `logging.Logger` based on the full class name"""
-        if self.__class__.__module__ == "__main__":
-            module_name = __main__.__spec__.name
-        else:
-            module_name = self.__class__.__module__
-        logger_name = f"{module_name}.{self.__class__.__qualname__}"
-        return logging.getLogger(logger_name)
+    @classmethod
+    def get_logger(cls, prefix: str = "") -> logging.Logger:
+        """Get a `logging.Logger` for this class
+
+        Args:
+            prefix: optional prefix for the logger name
+        """
+        return logging.getLogger(get_logger_name_for_class(cls, prefix))
 
 
 class LoggingMixin(LoggingMixinBase):

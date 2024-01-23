@@ -110,7 +110,7 @@ class ConfigLoader(LoggingMixin):
             default_config: Set initial `self.config` to this.
             default_parsers: Use these parsers instead of the `DEFAULT_PARSERS`.
         """
-        self.logger: logging.Logger = self._get_logger()
+        self.logger: logging.Logger = self.get_logger()
 
         self.merger: deepmerge.Merger = deepmerge.Merger(
             [(dict, ["merge"]), (list, ["override"])], ["override"], ["override"]
