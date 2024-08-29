@@ -130,7 +130,7 @@ class ConfigLoader(LoggingMixin):
         """Load a given config path.
 
         The loaded config will be merged into `self.config`. The actual config loaded will
-        also be stored in `self.load_stack[path]`. Any errors  during loading will be stored
+        also be stored in `self.load_stack[path]`. Any errors during loading will be stored
         in `self.load_errors[path]`.
 
         Args:
@@ -170,4 +170,43 @@ class ConfigLoader(LoggingMixin):
             if suppress_errors:
                 return
             raise e
+        return
+
+    def load_config_directory(
+        self, path: Union[str, Path], *, suppress_errors: bool = False
+    ) -> None:
+        """Load all config files from a given directory
+
+        Files are loaded in alphabetical/lexical order which can be used to ensure order. For example:
+
+        ```
+        10-first-config.yml
+        20-leaving-space-for-expansion.yml
+        99-last-config.yml
+        ```
+
+        All available config extensions will be loaded (see: `DEFAULT_PARSERS`). Unknown filetypes
+        will be skipped.
+
+        Args:
+            path: directory to scan for config files
+            suppress_errors: Prevent errors from being thrown while loading. This does not affect
+                errors being stored in `self.load_errors`. This will not prevent errors being
+                thrown if the path does not exist.
+
+        Raises:
+            ValueError: the path is invalid.
+
+        *Added in 0.3*
+        """
+        if isinstance(path, str):
+            path = Path(path)
+
+        if not path.is_dir():
+            raise ValueError(f"Cannot load from {path}")
+
+        for child in sorted(path.iterdir()):
+            if child.is_file() and child.suffix[1:] in DEFAULT_PARSERS:
+                # note: child.suffix includes "." we remove it with slice
+                self.load_config(child, suppress_errors=suppress_errors)
         return

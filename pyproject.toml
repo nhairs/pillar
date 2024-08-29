@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pillar"
-version = "0.2.0"
+version = "0.3.0"
 description = "Building Blocks for Python Applications"
 authors  = [
     {name = "Nicholas Hairs", email = "info+pillar@nicholashairs.com"},
@@ -37,8 +37,8 @@ classifiers = [
 ]
 
 [project.urls]
-homepage = "https://nhairs.github.io/pillar/latest/"
-github = "https://github.com/nhairs/pillar"
+HomePage = "https://nhairs.github.io/pillar"
+GitHub = "https://github.com/nhairs/pillar"
 
 [project.optional-dependencies]
 recommended = [

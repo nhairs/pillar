@@ -208,6 +208,8 @@ class Application(LoggingMixin):
 
         # Load Config
         if self.config_args_enabled:
+            for path in self.args.config_dirs:
+                self.config_loader.load_config_directory(path)
             for path in self.args.config_paths:
                 self.config_loader.load_config(path)
 
@@ -313,6 +315,16 @@ class Application(LoggingMixin):
                 default=[],
                 help="Add a config file to parse. Config files are parsed in the order they are added with values being merged into the previously parsed config.",
             )
+            parser.add_argument(
+                "--config-dir",
+                action="append",
+                metavar="CONFIG_DIRECTORY",
+                dest="config_dirs",
+                required=self.config_required,
+                default=[],
+                help="Add a directory to parse config files from. Directories are parsed before config files and are parsed in the order they are added. Files within the directory are added in alphabetical/lexical order.",
+            )
+
         parser.add_argument(
             "-v",
             "--verbose",
