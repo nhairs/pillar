@@ -1,10 +1,21 @@
 [
   {
-    "version": "0.2.0",
-    "title": "0.2.0",
+    "version": "0.3.0",
+    "title": "0.3.0",
     "aliases": [
       "latest"
     ],
+    "properties": {
+      "git_branch": "main",
+      "git_commit": "9dcefa6fa0d614555cbf8dfef35df1c501c4babe",
+      "git_commit_short": "9dcefa6",
+      "build_timestamp": "1724942593"
+    }
+  },
+  {
+    "version": "0.2.0",
+    "title": "0.2.0",
+    "aliases": [],
     "properties": {
       "git_branch": "main",
       "git_commit": "637d72fdd905f791a895a3f6e29a52276e5634c8",
