@@ -94,11 +94,11 @@ In general Pillar applications are designed to be customised more through config
 
 If you are instantiating the application multiple times it is safe to use basic types including `dict` and `list` as these will be deep copied by the [config loader](#the-config-loader). It is **unsafe** to use custom classes as by default these are not copied (and thus will be shared by all instances of your application).
 
-**Arguments** - Config files passed as arguments will automatically be loaded via the `ConfigLoader` in the order they are provided.
+**Arguments** - Config files can be passed as individual files via `--config` or as a directory of files using `--config-dir` to the be loaded using the `ConfigLoader`. Config is first loaded from config directories with individual files being loaded in alphabetical/lexical order. Config is then loaded from individual files in the order they were provided.
 
 This can be disabled by setting the `config_args_enabled` class attribute to `False`. Note: even if the config args are disabled the config loader will still be created (with the default config passed through).
 
-By default the `--config` argument is optional, however it can be made mandatory by setting the `config_required` attributes to `True`.
+By default providing config via the `--config` or `--config-dir` arguments is optional, however it can be made mandatory by setting the `config_required` attributes to `True`.
 
 ```python
 class MyApplication(Application):

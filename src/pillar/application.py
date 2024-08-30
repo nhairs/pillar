@@ -112,7 +112,7 @@ class Application(LoggingMixin):
         version: (class) version of application - used in argparse help text.
         logging_manifest: (class) configuration of application's logging.
         config_args_enabled: (class) enable collecting config from args.
-        config_required: (class) providing a config file via args is mandatory.
+        config_required: (class) providing a config file or directory via args is mandatory.
         default_config: (class) default config of the application
         config_loader_class: (class) ConfigLoader to use with the application.
         logger: logger of application
@@ -159,6 +159,8 @@ class Application(LoggingMixin):
         self.config: Dict[str, Any]
         self._arg_parser: argparse.ArgumentParser
         self.args: argparse.Namespace
+
+        # TODO: warn if config_args_enabled = False and config_required = True
         return
 
     def setup(self, *, suppress_warning: bool = False) -> None:
@@ -195,18 +197,27 @@ class Application(LoggingMixin):
             return
         self._setup_called = True
 
-        # Initial Logging
+        ## Initial Logging
         self._setup_initial_logging()
 
-        # Setup Config Loader
+        ## Setup Config Loader
         self.config_loader = self.config_loader_class(default_config=self.default_config)
         self.config = self.config_loader.config
 
-        # Parse Aguments
+        ## Parse Aguments
         self._arg_parser = self.get_argument_parser()
         self.args = self._arg_parser.parse_args(self._argv)
 
-        # Load Config
+        # Argument checks that can't be done in the parser:
+        if (
+            self.config_args_enabled
+            and self.config_required
+            and not self.args.config_dirs
+            and not self.args.config_paths
+        ):
+            self._arg_parser.error("Must provide config via --config or --config-dir")
+
+        ## Load Config
         if self.config_args_enabled:
             for path in self.args.config_dirs:
                 self.config_loader.load_config_directory(path)
@@ -305,13 +316,15 @@ class Application(LoggingMixin):
 
         ## Add Arguments
         if self.config_args_enabled:
+            # Note: as config can be passed through multiple arguments, config_required is checked
+            # during setup to avoid forcing users to pass a config file and a config directory.
             parser.add_argument(
                 "-c",
                 "--config",
                 action="append",
                 metavar="CONFIG_PATH",
                 dest="config_paths",
-                required=self.config_required,
+                required=False,
                 default=[],
                 help="Add a config file to parse. Config files are parsed in the order they are added with values being merged into the previously parsed config.",
             )
@@ -320,7 +333,7 @@ class Application(LoggingMixin):
                 action="append",
                 metavar="CONFIG_DIRECTORY",
                 dest="config_dirs",
-                required=self.config_required,
+                required=False,
                 default=[],
                 help="Add a directory to parse config files from. Directories are parsed before config files and are parsed in the order they are added. Files within the directory are added in alphabetical/lexical order.",
             )
