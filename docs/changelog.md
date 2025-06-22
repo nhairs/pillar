@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Logging mixin classes now set default `stacklevel` to `2` so that logging calls reference
+  the correct calling line (rather than the pillar module).
+
 #### Development
 
 - Tests are now run using UV (rather than in a docker container)

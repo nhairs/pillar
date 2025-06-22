@@ -112,7 +112,7 @@ def get_logger_name_for_class(cls: Type[object], prefix: str = "") -> str:
         prefix: optional prefix for the logger name.
     """
     if cls.__module__ == "__main__":
-        module_name = __main__.__spec__.name
+        module_name = __main__.__spec__.name if __main__.__spec__ is not None else "__main__"
     else:
         module_name = cls.__module__
     logger_name = f"{module_name}.{cls.__qualname__}"
@@ -153,6 +153,8 @@ class LoggingMixin(LoggingMixinBase):
 
         When you're tired of finding the bug and want to log everything.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.log(VVDEBUG, msg, *args, **kwargs)
         return
 
@@ -161,6 +163,8 @@ class LoggingMixin(LoggingMixinBase):
 
         More than debug, less than everything.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.log(VDEBUG, msg, *args, **kwargs)
         return
 
@@ -169,6 +173,8 @@ class LoggingMixin(LoggingMixinBase):
 
         Basic debug messages
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.debug(msg, *args, **kwargs)
         return
 
@@ -177,6 +183,8 @@ class LoggingMixin(LoggingMixinBase):
 
         Print something to the screen/logfile so we know what is happening
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.info(msg, *args, **kwargs)
         return
 
@@ -187,6 +195,8 @@ class LoggingMixin(LoggingMixinBase):
 
         In a larger system this will likely just go to centralised logging.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.warning(msg, *args, **kwargs)
         return
 
@@ -199,6 +209,8 @@ class LoggingMixin(LoggingMixinBase):
         In a larger system, this will likely cause a gentle alert to be placed somewhere.
         An end user might receive a useful error message (like a HTTP 4xx 5xx).
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.error(msg, *args, **kwargs)
         return
 
@@ -212,6 +224,8 @@ class LoggingMixin(LoggingMixinBase):
         An end user is definitely going to get an error message, probably not even
         a useful one, just a HTTP 500.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self.logger.critical(msg, *args, **kwargs)
         return
 
@@ -229,6 +243,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
 
         When you're tired of finding the bug and want to log everything.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.log(VVDEBUG, msg, *args, **kwargs)
         return
 
@@ -237,6 +253,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
 
         More than debug, less than everything.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.log(VDEBUG, msg, *args, **kwargs)
         return
 
@@ -245,6 +263,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
 
         Basic debug messages
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.debug(msg, *args, **kwargs)
         return
 
@@ -253,6 +273,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
 
         Print something to the screen/logfile so we know what is happening
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.info(msg, *args, **kwargs)
         return
 
@@ -263,6 +285,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
 
         In a larger system this will likely just go to centralised logging.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.warning(msg, *args, **kwargs)
         return
 
@@ -275,6 +299,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
         In a larger system, this will likely cause a gentle alert to be placed somewhere.
         An end user might receive a useful error message (like a HTTP 4xx 5xx).
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.error(msg, *args, **kwargs)
         return
 
@@ -288,6 +314,8 @@ class UnderscoreLoggingMixin(LoggingMixinBase):  # pylint: disable=too-few-publi
         An end user is definitely going to get an error message, probably not even
         a useful one, just a HTTP 500.
         """
+        if "stacklevel" not in kwargs:
+            kwargs["stacklevel"] = 2
         self._logger.critical(msg, *args, **kwargs)
         return
 
