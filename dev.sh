@@ -47,7 +47,7 @@ PACKAGE_VERSION=$(toml get --toml-path pyproject.toml project.version)
 # customise the main dev.sh
 SOURCE_FILES="src tests examples"
 FORMAT_FILES="$SOURCE_FILES"
-PYTHON_MIN_VERSION="py37"
+PYTHON_MIN_VERSION="py38"
 
 ## Build related
 ## -----------------------------------------------------------------------------
@@ -311,7 +311,7 @@ case $1 in
         fi
 
         compose_run python-common \
-            black --line-length 100 --target-version ${PYTHON_MIN_VERSION} $FORMAT_FILES
+            black $FORMAT_FILES
 
         ;;
 
@@ -331,7 +331,7 @@ case $1 in
 
         heading "black - check only 🐍"
         compose_run python-common \
-            black --line-length 100 --target-version ${PYTHON_MIN_VERSION} --check --diff $SOURCE_FILES
+            black --check --diff $SOURCE_FILES
 
         heading "pylint 🐍"
         compose_run python-common pylint -j 4 --output-format=colorized $SOURCE_FILES
@@ -344,11 +344,12 @@ case $1 in
     "test")
         command_build tmp
 
-        heading "tox 🐍"
-        if [[ "$SKIP_BUILD" = 0 ]]; then
-            compose_build python-tox
-        fi
-        compose_run python-tox tox -e ${PYTHON_MIN_VERSION} || true
+        #heading "tox 🐍"
+        #if [[ "$SKIP_BUILD" = 0 ]]; then
+        #    compose_build python-tox
+        #fi
+        #compose_run python-tox tox -e ${PYTHON_MIN_VERSION} || true
+        uvx tox -e ${PYTHON_MIN_VERSION} || true
 
         rm -rf .tmp/dist/*
 
@@ -357,11 +358,12 @@ case $1 in
     "test-full")
         command_build tmp
 
-        heading "tox 🐍"
-        if [[ "$SKIP_BUILD" = 0 ]]; then
-            compose_build python-tox
-        fi
-        compose_run python-tox tox || true
+        #heading "tox 🐍"
+        #if [[ "$SKIP_BUILD" = 0 ]]; then
+        #    compose_build python-tox
+        #fi
+        #compose_run python-tox tox || true
+        uvx tox || true
 
         rm -rf .tmp/dist/*
 

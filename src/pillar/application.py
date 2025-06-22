@@ -305,9 +305,9 @@ class Application(LoggingMixin):
         parser_kwargs: Dict[str, Any] = {
             "prog": self.application_name,
             "epilog": self.epilog,
-            "description": inspect.cleandoc(self.__class__.__doc__)
-            if self.__class__.__doc__
-            else None,
+            "description": (
+                inspect.cleandoc(self.__class__.__doc__) if self.__class__.__doc__ else None
+            ),
             "formatter_class": argparse.RawDescriptionHelpFormatter,
         }
 

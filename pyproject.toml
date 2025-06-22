@@ -4,18 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pillar"
-version = "0.3.0"
+version = "0.4.0.dev1"
 description = "Building Blocks for Python Applications"
 authors  = [
     {name = "Nicholas Hairs", email = "info+pillar@nicholashairs.com"},
 ]
 
 # Dependency Information
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 dependencies = [
     "colorlog",
     "dataclassy",
-    "deepmerge",
+    "deepmerge>=2.0",
     "pyaml",
 ]
 
@@ -25,12 +25,12 @@ license = {text = "MIT"}
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
     "Typing :: Typed",
@@ -42,13 +42,13 @@ GitHub = "https://github.com/nhairs/pillar"
 
 [project.optional-dependencies]
 recommended = [
-    "orjson",
+    "orjson;implementation_name!='pypy'",
 ]
 
 dev = [
     ## Type Stubs
     "types-PyYAML",
-    "orjson",  # is optional dependency, install during dev for typechecking
+    "orjson;implementation_name!='pypy'",  # is optional dependency, install during dev for typechecking
     ### dev.sh dependencies
     ## Formatting / Linting
     "validate-pyproject[all]",
@@ -75,3 +75,6 @@ docs = [
 
 [tool.setuptools.package-data]
 pillar = ["py.typed"]
+
+[tool.black]
+line-length = 100
