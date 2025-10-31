@@ -423,6 +423,8 @@ class Application(LoggingMixin):
                 logging.handlers.RotatingFileHandler(  # pylint: disable=unexpected-keyword-arg
                     Path(self.logging_manifest.initial_log_location)
                     / self.logging_manifest.initial_log_filename.format(name=self.name),
+                    maxBytes=self.logging_manifest.file_max_size,
+                    backupCount=self.logging_manifest.file_backup_count,
                     encoding="utf8",
                     **logging_file_handler_errors_kwargs("replace"),
                 )
@@ -452,6 +454,8 @@ class Application(LoggingMixin):
                 logging.handlers.RotatingFileHandler(  # pylint: disable=unexpected-keyword-arg
                     Path(self.args.log_dir)
                     / self.logging_manifest.file_filename.format(name=self.name),
+                    maxBytes=self.logging_manifest.file_max_size,
+                    backupCount=self.logging_manifest.file_backup_count,
                     encoding="utf8",
                     **logging_file_handler_errors_kwargs("replace"),
                 )

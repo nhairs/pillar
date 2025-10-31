@@ -23,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Orjson is not installed in PyPy environments
 - Version removed from `docker-compose.yml`
 
+### Fixed
+
+- Application file loggers correctly use `file_max_size` and `file_backup_count` from `LoggingManifest`.
 
 ### Removed
 
