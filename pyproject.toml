@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pillar"
-version = "0.4.0.dev2"
+version = "0.4.0"
 description = "Building Blocks for Python Applications"
 authors  = [
     {name = "Nicholas Hairs", email = "info+pillar@nicholashairs.com"},
@@ -31,6 +31,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "License :: OSI Approved :: MIT License",
     "Intended Audience :: Developers",
     "Typing :: Typed",
