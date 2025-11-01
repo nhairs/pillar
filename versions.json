@@ -1,10 +1,15 @@
 [
   {
-    "version": "0.3.0",
-    "title": "0.3.0",
+    "version": "0.4.0",
+    "title": "0.4.0",
     "aliases": [
       "latest"
-    ],
+    ]
+  },
+  {
+    "version": "0.3.0",
+    "title": "0.3.0",
+    "aliases": [],
     "properties": {
       "git_branch": "main",
       "git_commit": "e3de09d146f156576778fece74b5088aa5dcc1b1",
