@@ -14,7 +14,6 @@ authors  = [
 requires-python = ">=3.8"
 dependencies = [
     "colorlog",
-    "dataclassy",
     "deepmerge>=2.0",
     "pyaml",
 ]
