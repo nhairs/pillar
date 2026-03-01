@@ -2,6 +2,7 @@
 ### ============================================================================
 ## Standard Library
 import argparse
+import dataclasses
 import inspect
 import logging
 import logging.handlers
@@ -17,16 +18,16 @@ import __main__
 
 ## Installed
 import colorlog
-import dataclassy
 
 ## Application
 from .config import ConfigLoader
+from .dataclass import dataclass_slots_kwargs
 from .logging import LoggingMixin, get_log_level, logging_file_handler_errors_kwargs
 
 
 ### CLASSES
 ### ============================================================================
-@dataclassy.dataclass(slots=True)  # pylint: disable=unexpected-keyword-arg
+@dataclasses.dataclass(**dataclass_slots_kwargs())
 class LoggingManifest:
     """Simplified configuration of an `Application`'s logging.
 
@@ -65,7 +66,7 @@ class LoggingManifest:
 
     # General
     default_level: int = logging.INFO
-    additional_namespaces: List[str] = dataclassy.factory(list)
+    additional_namespaces: List[str] = dataclasses.field(default_factory=list)
     # Literal require py38
     # log_format: Literal["text", "json"] = "text"
     # log_format: str = "text"
